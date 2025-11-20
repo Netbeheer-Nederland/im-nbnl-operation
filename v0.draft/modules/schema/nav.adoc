@@ -1,0 +1,47 @@
+[.truncate]
+* Information model
+** xref::index.adoc[Index]
+** Classes
+*** xref::class/.adoc[ (root)]
+
+*** xref::class/ACDCTerminal.adoc[ACDCTerminal]
+
+
+
+*** xref::class/Analog.adoc[Analog]
+
+
+
+*** xref::class/AnalogValue.adoc[AnalogValue]
+
+
+
+*** xref::class/IdentifiedObject.adoc[IdentifiedObject]
+
+
+
+*** xref::class/IOPoint.adoc[IOPoint]
+
+
+
+*** xref::class/Measurement.adoc[Measurement]
+
+
+
+*** xref::class/MeasurementValue.adoc[MeasurementValue]
+
+
+
+*** xref::class/PowerSystemResource.adoc[PowerSystemResource]
+
+
+
+*** xref::class/Terminal.adoc[Terminal]
+
+
+
+
+** Enumerations
+*** xref::enumeration/PhaseCode.adoc[PhaseCode]
+*** xref::enumeration/UnitMultiplier.adoc[UnitMultiplier]
+*** xref::enumeration/UnitSymbol.adoc[UnitSymbol]
