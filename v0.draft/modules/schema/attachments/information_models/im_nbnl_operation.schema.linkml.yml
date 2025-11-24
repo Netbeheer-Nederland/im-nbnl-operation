@@ -1,6 +1,6 @@
 name: im-nbnl-operation
 version: v0.draft
-title: NBNL Operation Profile
+title: NBNL Operation (OP) Profile
 description: |-
   Information models for the NBNL Operation Profile.
 id: http://modellen.netbeheernederland.nl/operation-profile/im-nbnl-operation
