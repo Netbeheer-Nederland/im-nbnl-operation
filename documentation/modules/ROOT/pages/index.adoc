@@ -3,7 +3,7 @@
 This vocabulary describes the NBNL Operation Profile based on IEC
 61970-452:2021.
 
-.Data Product
+.Profile
 [d2,svg,theme=4]
 ----
 vars: {
