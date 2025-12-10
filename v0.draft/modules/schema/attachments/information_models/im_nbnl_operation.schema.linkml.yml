@@ -17,73 +17,6 @@ prefixes:
   skos: http://www.w3.org/2004/02/skos/core#
   xsd: http://www.w3.org/2001/XMLSchema#
 enums:
-  PhaseCode:
-    description: "An unordered enumeration of phase identifiers.  Allows designation\
-      \ of phases for both transmission and distribution equipment, circuits and loads.\
-      \   The enumeration, by itself, does not describe how the phases are connected\
-      \ together or connected to ground.  Ground is not explicitly denoted as a phase.\r\
-      \nResidential and small commercial loads are often served from single-phase,\
-      \ or split-phase, secondary circuits. For the example of s12N, phases 1 and\
-      \ 2 refer to hot wires that are 180 degrees out of phase, while N refers to\
-      \ the neutral wire. Through single-phase transformer connections, these secondary\
-      \ circuits may be served from one or two of the primary phases A, B, and C.\
-      \ For three-phase loads, use the A, B, C phase codes instead of s12N.\r\nThe\
-      \ integer values are from IEC 61968-9 to support revenue metering applications."
-    from_schema: https://cim.ucaiug.io/ns#TC57CIM
-    enum_uri: cim:PhaseCode
-    permissible_values:
-      A:
-        meaning: cim:PhaseCode.A
-      AB:
-        meaning: cim:PhaseCode.AB
-      ABC:
-        meaning: cim:PhaseCode.ABC
-      ABCN:
-        meaning: cim:PhaseCode.ABCN
-      ABN:
-        meaning: cim:PhaseCode.ABN
-      AC:
-        meaning: cim:PhaseCode.AC
-      ACN:
-        meaning: cim:PhaseCode.ACN
-      AN:
-        meaning: cim:PhaseCode.AN
-      B:
-        meaning: cim:PhaseCode.B
-      BC:
-        meaning: cim:PhaseCode.BC
-      BCN:
-        meaning: cim:PhaseCode.BCN
-      BN:
-        meaning: cim:PhaseCode.BN
-      C:
-        meaning: cim:PhaseCode.C
-      CN:
-        meaning: cim:PhaseCode.CN
-      N:
-        meaning: cim:PhaseCode.N
-      none:
-        meaning: cim:PhaseCode.none
-      s1:
-        meaning: cim:PhaseCode.s1
-      s12:
-        meaning: cim:PhaseCode.s12
-      s12N:
-        meaning: cim:PhaseCode.s12N
-      s1N:
-        meaning: cim:PhaseCode.s1N
-      s2:
-        meaning: cim:PhaseCode.s2
-      s2N:
-        meaning: cim:PhaseCode.s2N
-      X:
-        meaning: cim:PhaseCode.X
-      XN:
-        meaning: cim:PhaseCode.XN
-      XY:
-        meaning: cim:PhaseCode.XY
-      XYN:
-        meaning: cim:PhaseCode.XYN
   UnitMultiplier:
     description: "The unit multipliers defined for the CIM.  When applied to unit\
       \ symbols, the unit symbol is treated as a derived unit. Regardless of the contents\
@@ -110,18 +43,6 @@ enums:
     from_schema: https://cim.ucaiug.io/ns#TC57CIM
     enum_uri: cim:UnitMultiplier
     permissible_values:
-      a:
-        meaning: cim:UnitMultiplier.a
-      c:
-        meaning: cim:UnitMultiplier.c
-      d:
-        meaning: cim:UnitMultiplier.d
-      da:
-        meaning: cim:UnitMultiplier.da
-      E:
-        meaning: cim:UnitMultiplier.E
-      f:
-        meaning: cim:UnitMultiplier.f
       G:
         meaning: cim:UnitMultiplier.G
       h:
@@ -134,24 +55,8 @@ enums:
         meaning: cim:UnitMultiplier.M
       micro:
         meaning: cim:UnitMultiplier.micro
-      n:
-        meaning: cim:UnitMultiplier.n
       none:
         meaning: cim:UnitMultiplier.none
-      p:
-        meaning: cim:UnitMultiplier.p
-      P:
-        meaning: cim:UnitMultiplier.P
-      T:
-        meaning: cim:UnitMultiplier.T
-      y:
-        meaning: cim:UnitMultiplier.y
-      Y:
-        meaning: cim:UnitMultiplier.Y
-      z:
-        meaning: cim:UnitMultiplier.z
-      Z:
-        meaning: cim:UnitMultiplier.Z
   UnitSymbol:
     description: "The derived units defined for usage in the CIM. In some cases, the\
       \ derived unit is equal to an SI unit. Whenever possible, the standard derived\
@@ -184,244 +89,14 @@ enums:
     permissible_values:
       A:
         meaning: cim:UnitSymbol.A
-      A2:
-        meaning: cim:UnitSymbol.A2
-      A2h:
-        meaning: cim:UnitSymbol.A2h
-      A2s:
-        meaning: cim:UnitSymbol.A2s
       Ah:
         meaning: cim:UnitSymbol.Ah
-      anglemin:
-        meaning: cim:UnitSymbol.anglemin
-      anglesec:
-        meaning: cim:UnitSymbol.anglesec
-      APerA:
-        meaning: cim:UnitSymbol.APerA
-      APerm:
-        meaning: cim:UnitSymbol.APerm
-      As:
-        meaning: cim:UnitSymbol.As
-      bar:
-        meaning: cim:UnitSymbol.bar
-      Bq:
-        meaning: cim:UnitSymbol.Bq
-      Btu:
-        meaning: cim:UnitSymbol.Btu
-      C:
-        meaning: cim:UnitSymbol.C
-      cd:
-        meaning: cim:UnitSymbol.cd
-      character:
-        meaning: cim:UnitSymbol.character
-      charPers:
-        meaning: cim:UnitSymbol.charPers
-      cosPhi:
-        meaning: cim:UnitSymbol.cosPhi
-      count:
-        meaning: cim:UnitSymbol.count
-      CPerkg:
-        meaning: cim:UnitSymbol.CPerkg
-      CPerm2:
-        meaning: cim:UnitSymbol.CPerm2
-      CPerm3:
-        meaning: cim:UnitSymbol.CPerm3
-      d:
-        meaning: cim:UnitSymbol.d
-      dB:
-        meaning: cim:UnitSymbol.dB
-      dBm:
-        meaning: cim:UnitSymbol.dBm
-      deg:
-        meaning: cim:UnitSymbol.deg
-      degC:
-        meaning: cim:UnitSymbol.degC
-      F:
-        meaning: cim:UnitSymbol.F
-      FPerm:
-        meaning: cim:UnitSymbol.FPerm
-      ft3:
-        meaning: cim:UnitSymbol.ft3
-      G:
-        meaning: cim:UnitSymbol.G
-      gal:
-        meaning: cim:UnitSymbol.gal
-      gPerg:
-        meaning: cim:UnitSymbol.gPerg
-      Gy:
-        meaning: cim:UnitSymbol.Gy
-      GyPers:
-        meaning: cim:UnitSymbol.GyPers
-      H:
-        meaning: cim:UnitSymbol.H
-      h:
-        meaning: cim:UnitSymbol.h
-      ha:
-        meaning: cim:UnitSymbol.ha
-      HPerm:
-        meaning: cim:UnitSymbol.HPerm
-      Hz:
-        meaning: cim:UnitSymbol.Hz
-      HzPerHz:
-        meaning: cim:UnitSymbol.HzPerHz
-      HzPers:
-        meaning: cim:UnitSymbol.HzPers
-      J:
-        meaning: cim:UnitSymbol.J
-      JPerK:
-        meaning: cim:UnitSymbol.JPerK
-      JPerkg:
-        meaning: cim:UnitSymbol.JPerkg
-      JPerkgK:
-        meaning: cim:UnitSymbol.JPerkgK
-      JPerm2:
-        meaning: cim:UnitSymbol.JPerm2
-      JPerm3:
-        meaning: cim:UnitSymbol.JPerm3
-      JPermol:
-        meaning: cim:UnitSymbol.JPermol
-      JPermolK:
-        meaning: cim:UnitSymbol.JPermolK
-      JPers:
-        meaning: cim:UnitSymbol.JPers
-      K:
-        meaning: cim:UnitSymbol.K
-      kat:
-        meaning: cim:UnitSymbol.kat
-      katPerm3:
-        meaning: cim:UnitSymbol.katPerm3
-      kg:
-        meaning: cim:UnitSymbol.kg
-      kgm:
-        meaning: cim:UnitSymbol.kgm
-      kgm2:
-        meaning: cim:UnitSymbol.kgm2
-      kgPerJ:
-        meaning: cim:UnitSymbol.kgPerJ
-      kgPerm3:
-        meaning: cim:UnitSymbol.kgPerm3
-      kn:
-        meaning: cim:UnitSymbol.kn
-      KPers:
-        meaning: cim:UnitSymbol.KPers
-      l:
-        meaning: cim:UnitSymbol.l
-      lm:
-        meaning: cim:UnitSymbol.lm
-      lPerh:
-        meaning: cim:UnitSymbol.lPerh
-      lPerl:
-        meaning: cim:UnitSymbol.lPerl
-      lPers:
-        meaning: cim:UnitSymbol.lPers
-      lx:
-        meaning: cim:UnitSymbol.lx
-      m:
-        meaning: cim:UnitSymbol.m
-      M:
-        meaning: cim:UnitSymbol.M
-      m2:
-        meaning: cim:UnitSymbol.m2
-      m2Pers:
-        meaning: cim:UnitSymbol.m2Pers
-      m3:
-        meaning: cim:UnitSymbol.m3
-      m3Compensated:
-        meaning: cim:UnitSymbol.m3Compensated
-      m3Perh:
-        meaning: cim:UnitSymbol.m3Perh
-      m3Perkg:
-        meaning: cim:UnitSymbol.m3Perkg
-      m3Pers:
-        meaning: cim:UnitSymbol.m3Pers
-      m3Uncompensated:
-        meaning: cim:UnitSymbol.m3Uncompensated
-      min:
-        meaning: cim:UnitSymbol.min
-      mmHg:
-        meaning: cim:UnitSymbol.mmHg
-      mol:
-        meaning: cim:UnitSymbol.mol
-      molPerkg:
-        meaning: cim:UnitSymbol.molPerkg
-      molPerm3:
-        meaning: cim:UnitSymbol.molPerm3
-      molPermol:
-        meaning: cim:UnitSymbol.molPermol
-      mPerm3:
-        meaning: cim:UnitSymbol.mPerm3
-      mPers:
-        meaning: cim:UnitSymbol.mPers
-      mPers2:
-        meaning: cim:UnitSymbol.mPers2
-      Mx:
-        meaning: cim:UnitSymbol.Mx
-      N:
-        meaning: cim:UnitSymbol.N
-      Nm:
-        meaning: cim:UnitSymbol.Nm
       none:
         meaning: cim:UnitSymbol.none
-      NPerm:
-        meaning: cim:UnitSymbol.NPerm
-      Oe:
-        meaning: cim:UnitSymbol.Oe
       ohm:
         meaning: cim:UnitSymbol.ohm
-      ohmm:
-        meaning: cim:UnitSymbol.ohmm
-      ohmPerm:
-        meaning: cim:UnitSymbol.ohmPerm
-      onePerHz:
-        meaning: cim:UnitSymbol.onePerHz
-      onePerm:
-        meaning: cim:UnitSymbol.onePerm
-      Pa:
-        meaning: cim:UnitSymbol.Pa
-      PaPers:
-        meaning: cim:UnitSymbol.PaPers
-      Pas:
-        meaning: cim:UnitSymbol.Pas
-      ppm:
-        meaning: cim:UnitSymbol.ppm
-      Q:
-        meaning: cim:UnitSymbol.Q
-      Qh:
-        meaning: cim:UnitSymbol.Qh
-      rad:
-        meaning: cim:UnitSymbol.rad
-      radPers:
-        meaning: cim:UnitSymbol.radPers
-      radPers2:
-        meaning: cim:UnitSymbol.radPers2
-      rev:
-        meaning: cim:UnitSymbol.rev
-      rotPers:
-        meaning: cim:UnitSymbol.rotPers
-      s:
-        meaning: cim:UnitSymbol.s
-      S:
-        meaning: cim:UnitSymbol.S
-      SPerm:
-        meaning: cim:UnitSymbol.SPerm
-      sPers:
-        meaning: cim:UnitSymbol.sPers
-      sr:
-        meaning: cim:UnitSymbol.sr
-      Sv:
-        meaning: cim:UnitSymbol.Sv
-      T:
-        meaning: cim:UnitSymbol.T
-      therm:
-        meaning: cim:UnitSymbol.therm
-      tonne:
-        meaning: cim:UnitSymbol.tonne
       V:
         meaning: cim:UnitSymbol.V
-      V2:
-        meaning: cim:UnitSymbol.V2
-      V2h:
-        meaning: cim:UnitSymbol.V2h
       VA:
         meaning: cim:UnitSymbol.VA
       VAh:
@@ -430,40 +105,12 @@ enums:
         meaning: cim:UnitSymbol.VAr
       VArh:
         meaning: cim:UnitSymbol.VArh
-      Vh:
-        meaning: cim:UnitSymbol.Vh
-      VPerHz:
-        meaning: cim:UnitSymbol.VPerHz
-      VPerm:
-        meaning: cim:UnitSymbol.VPerm
-      VPerV:
-        meaning: cim:UnitSymbol.VPerV
-      VPerVA:
-        meaning: cim:UnitSymbol.VPerVA
-      VPerVAr:
-        meaning: cim:UnitSymbol.VPerVAr
-      Vs:
-        meaning: cim:UnitSymbol.Vs
       W:
         meaning: cim:UnitSymbol.W
       Wb:
         meaning: cim:UnitSymbol.Wb
       Wh:
         meaning: cim:UnitSymbol.Wh
-      WPerA:
-        meaning: cim:UnitSymbol.WPerA
-      WPerm2:
-        meaning: cim:UnitSymbol.WPerm2
-      WPerm2sr:
-        meaning: cim:UnitSymbol.WPerm2sr
-      WPermK:
-        meaning: cim:UnitSymbol.WPermK
-      WPers:
-        meaning: cim:UnitSymbol.WPers
-      WPersr:
-        meaning: cim:UnitSymbol.WPersr
-      WPerW:
-        meaning: cim:UnitSymbol.WPerW
 classes:
   PowerSystemResource:
     description: A power system resource (PSR) can be an item of equipment such as
@@ -545,13 +192,6 @@ classes:
       needing identification and naming attributes.
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Core
     attributes:
-      description:
-        description: The description is a free human readable text describing or naming
-          the object. It may be non unique and may not correlate to a naming hierarchy.
-        slot_uri: cim:IdentifiedObject.description
-        range: string
-        required: false
-        multivalued: false
       mRID:
         description: "Master resource identifier issued by a model authority. The\
           \ mRID is unique within an exchange context. Global uniqueness is easily\
@@ -563,11 +203,10 @@ classes:
         range: string
         required: false
         multivalued: false
-      europeanArticleNumberEAN:
-        description: The attribute is used for an exchange of the EAN code (European
-          Article Number). The length of the string is 16 characters as defined by
-          the EAN code.
-        slot_uri: nl:IdentifiedObject.europeanArticleNumberEAN
+      name:
+        description: "The name is any free human readable and possibly non unique\
+          \ text naming the object.\r\n"
+        slot_uri: cim:IdentifiedObject.name
         range: string
         required: false
         multivalued: false
@@ -637,4 +276,3 @@ classes:
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Meas
     is_a: IdentifiedObject
     class_uri: cim:IOPoint
-

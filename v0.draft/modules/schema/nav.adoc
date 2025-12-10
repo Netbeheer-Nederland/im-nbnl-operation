@@ -42,6 +42,5 @@
 
 
 ** Enumerations
-*** xref::enumeration/PhaseCode.adoc[PhaseCode]
 *** xref::enumeration/UnitMultiplier.adoc[UnitMultiplier]
 *** xref::enumeration/UnitSymbol.adoc[UnitSymbol]

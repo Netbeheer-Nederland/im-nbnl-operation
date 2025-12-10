@@ -36,87 +36,22 @@
 |===
 | Name | Type | Description | Inherited from
 
-| <<description,`description`>>
-//| [[slots_table.description]]<<description,`description`>>
-| 0..1 +
-https://w3id.org/linkml/String[`string`]
-| +++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to...+++
-| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
-
-| <<europeanArticleNumberEAN,`europeanArticleNumberEAN`>>
-//| [[slots_table.europeanArticleNumberEAN]]<<europeanArticleNumberEAN,`europeanArticleNumberEAN`>>
-| 0..1 +
-https://w3id.org/linkml/String[`string`]
-| +++The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 16 characters...+++
-| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
-
 | <<mRID,`mRID`>>
 //| [[slots_table.mRID]]<<mRID,`mRID`>>
 | 0..1 +
 https://w3id.org/linkml/String[`string`]
 | +++Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is...+++
 | xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+
+| <<name,`name`>>
+//| [[slots_table.name]]<<name,`name`>>
+| 0..1 +
+https://w3id.org/linkml/String[`string`]
+| +++The name is any free human readable and possibly non unique text naming the object.+++
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
 |===
 
 '''
-
-
-//[discrete]
-[#description]
-=== `description`
-+++The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.+++
-
-
-[cols="h,4",width=65%]
-|===
-| URI
-| `cim:IdentifiedObject.description`
-| Cardinality
-| 0..1
-| Type
-| https://w3id.org/linkml/String[`string`]
-
-| Inherited from
-| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
-
-
-|===
-
-////
-[.text-left]
---
-<<slots_table.description,&#10548;>>
---
-////
-
-
-//[discrete]
-[#europeanArticleNumberEAN]
-=== `europeanArticleNumberEAN`
-+++The attribute is used for an exchange of the EAN code (European Article Number). The length of the string is 16 characters as defined by the EAN code.+++
-
-
-[cols="h,4",width=65%]
-|===
-| URI
-| https://cim.ucaiug.io/ns/nl#IdentifiedObject.europeanArticleNumberEAN[`nl:IdentifiedObject.europeanArticleNumberEAN`]
-| Cardinality
-| 0..1
-| Type
-| https://w3id.org/linkml/String[`string`]
-
-| Inherited from
-| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
-
-
-|===
-
-////
-[.text-left]
---
-<<slots_table.europeanArticleNumberEAN,&#10548;>>
---
-////
 
 
 //[discrete]
@@ -145,6 +80,35 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 [.text-left]
 --
 <<slots_table.mRID,&#10548;>>
+--
+////
+
+
+//[discrete]
+[#name]
+=== `name`
++++The name is any free human readable and possibly non unique text naming the object.+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:IdentifiedObject.name`
+| Cardinality
+| 0..1
+| Type
+| https://w3id.org/linkml/String[`string`]
+
+| Inherited from
+| xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.name,&#10548;>>
 --
 ////
 

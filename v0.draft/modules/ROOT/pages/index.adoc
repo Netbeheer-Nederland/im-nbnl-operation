@@ -1,22 +1,38 @@
 = NBNL Operation (OP) Profile
 
-
+This vocabulary describes the NBNL Operation Profile based on IEC
+61970-452:2021.
 
 .Data Product
 [d2,svg,theme=4]
 ----
-grid-rows: 5
-grid-columns: 5
-
-horizontal-gap: 160
-vertical-gap: 80
-
 vars: {
   d2-config: {
+    layout-engine: elk
     pad: 20
   }
 }
 
+classes: {
+  grid: {
+    style: {
+      fill: "#eccfcb"
+      shadow: true
+    }
+  }
+  enterprise: {
+    style: {
+      fill: "#d1e7c2"
+      shadow: true
+    }
+  }
+  market: {
+    style: {
+      fill: "#fffbef"
+      shadow: true
+    }
+  }
+}
 
 legend: "" {
   style: {
@@ -65,41 +81,19 @@ legend: "" {
   }
 }
 
-classes: {
-  empty: {
-    label: ""
-    style: {
-      fill: transparent
-      stroke: transparent
-    }
-  }
-  grid: {
-    style: {
-      fill: "#eccfcb"
-      shadow: true
-    }
-  }
-  enterprise: {
-    style: {
-      fill: "#d1e7c2"
-      shadow: true
-    }
-  }
-  market: {
-    style: {
-      fill: "#fffbef"
-      shadow: true
-    }
-  }
-  dataset: {
-    style: {
-      shadow: true
-    }
-  }
-}
+direction: down
+
+Analog.class: grid
+AnalogValue.class: grid
+PowerSystemResource.class: grid
+Terminal.class: grid
+
+Analog -- AnalogValue
+Analog -- PowerSystemResource
+Analog -- Terminal
 ----
 
-== Additional artifacts
-
-* xref:schema:attachment$schemas/json_schema/im_nbnl_operation.json_schema.json[JSON schema]
-* xref:schema:attachment$examples/im_nbnl_operation.example.json[Example JSON instance data]
+From a measurement perspective, the *Operation Profile* specifies the
+parameters and data points required to monitor and assess the performance of a
+power system, ensuring accurate real-time measurements of key variables such as
+load, generation, voltage, and frequency under different operational states.
