@@ -353,11 +353,11 @@
             "type": "string"
         }
     },
-    "$id": "http://modellen.netbeheernederland.nl/operation-profile/im-nbnl-operation",
+    "$id": "http://modellen.netbeheernederland.nl/operation",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
     "metamodel_version": "1.7.0",
-    "title": "im-nbnl-operation",
+    "title": "operation",
     "type": "object",
     "version": "v0.draft"
 }
