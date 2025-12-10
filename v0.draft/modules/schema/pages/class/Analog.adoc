@@ -170,7 +170,7 @@ xref::class/ACDCTerminal.adoc[`ACDCTerminal`]
 //| [[slots_table.measurementType]]<<measurementType,`measurementType`>>
 | 0..1 +
 https://w3id.org/linkml/String[`string`]
-| +++Specifies the type of measurement.  For example, this specifies if the measurement represents an indoor temperature, outdoor...+++
+| +++Specifies the type of measurement. For example, this specifies if the measurement represents an indoor temperature, outdoor...+++
 | xref::class/Measurement.adoc[`Measurement`]
 
 | <<unitMultiplier,`unitMultiplier`>>
@@ -234,7 +234,7 @@ https://w3id.org/linkml/String[`string`]
 //[discrete]
 [#measurementType]
 === `measurementType`
-+++Specifies the type of measurement.  For example, this specifies if the measurement represents an indoor temperature, outdoor temperature, bus voltage, line flow, etc.
++++Specifies the type of measurement. For example, this specifies if the measurement represents an indoor temperature, outdoor temperature, bus voltage, line flow, etc.
 When the measurementType is set to "Specialization", the type of Measurement is defined in more detail by the specialized class which inherits from Measurement.+++
 
 

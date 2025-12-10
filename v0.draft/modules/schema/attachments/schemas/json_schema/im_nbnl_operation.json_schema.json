@@ -66,7 +66,7 @@
                     ]
                 },
                 "measurementType": {
-                    "description": "Specifies the type of measurement.  For example, this specifies if the measurement represents an indoor temperature, outdoor temperature, bus voltage, line flow, etc.\r\nWhen the measurementType is set to \"Specialization\", the type of Measurement is defined in more detail by the specialized class which inherits from Measurement.\r\n\r\n",
+                    "description": "Specifies the type of measurement. For example, this specifies if the measurement represents an indoor temperature, outdoor temperature, bus voltage, line flow, etc.\r\nWhen the measurementType is set to \"Specialization\", the type of Measurement is defined in more detail by the specialized class which inherits from Measurement.\r\n\r\n",
                     "type": [
                         "string",
                         "null"
@@ -188,7 +188,7 @@
         },
         "Measurement": {
             "additionalProperties": false,
-            "description": "A Measurement represents any measured, calculated or non-measured non-calculated quantity. Any piece of equipment may contain Measurements, e.g. a substation may have temperature measurements and door open indications, a transformer may have oil temperature and tank pressure measurements, a bay may contain a number of power flow measurements and a Breaker may contain a switch status measurement. \r\nThe PSR - Measurement association is intended to capture this use of Measurement and is included in the naming hierarchy based on EquipmentContainer. The naming hierarchy typically has Measurements as leaves, e.g. Substation-VoltageLevel-Bay-Switch-Measurement.\r\nSome Measurements represent quantities related to a particular sensor location in the network, e.g. a voltage transformer (VT) or potential transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is not captured in the PSR - Measurement association. Instead it is captured by the Measurement - Terminal association that is used to define the sensing location in the network topology. The location is defined by the connection of the Terminal to ConductingEquipment. \r\nIf both a Terminal and PSR are associated, and the PSR is of type ConductingEquipment, the associated Terminal should belong to that ConductingEquipment instance.\r\nWhen the sensor location is needed both Measurement-PSR and Measurement-Terminal are used. The Measurement-Terminal association is never used alone.",
+            "description": "A Measurement represents any measured, calculated or non-measured\nnon-calculated quantity. Any piece of equipment may contain Measurements,\ne.g. a substation may have temperature measurements and door open\nindications, a transformer may have oil temperature and tank pressure\nmeasurements, a bay may contain a number of power flow measurements and a\nBreaker may contain a switch status measurement.\n\nThe PSR - Measurement association is intended to capture this use of\nMeasurement and is included in the naming hierarchy based on\nEquipmentContainer. The naming hierarchy typically has Measurements as\nleaves, e.g. Substation-VoltageLevel-Bay-Switch-Measurement.\n\nSome Measurements represent quantities related to a particular sensor\nlocation in the network, e.g. a voltage transformer (VT) or potential\ntransformer (PT) at a busbar or a current transformer (CT) at the bar\nbetween a breaker and an isolator.  The sensing position is not captured\nin the PSR - Measurement association.  Instead it is captured by the\nMeasurement - Terminal association that is used to define the sensing\nlocation in the network topology. The location is defined by the\nconnection of the Terminal to ConductingEquipment.\n\nIf both a Terminal and PSR are associated, and the PSR is of type\nConductingEquipment, the associated Terminal should belong to that\nConductingEquipment instance.\n\nWhen the sensor location is needed both Measurement-PSR and\nMeasurement-Terminal are used.  The Measurement-Terminal association is\nnever used alone.",
             "properties": {
                 "PowerSystemResource": {
                     "anyOf": [
@@ -220,7 +220,7 @@
                     ]
                 },
                 "measurementType": {
-                    "description": "Specifies the type of measurement.  For example, this specifies if the measurement represents an indoor temperature, outdoor temperature, bus voltage, line flow, etc.\r\nWhen the measurementType is set to \"Specialization\", the type of Measurement is defined in more detail by the specialized class which inherits from Measurement.\r\n\r\n",
+                    "description": "Specifies the type of measurement. For example, this specifies if the measurement represents an indoor temperature, outdoor temperature, bus voltage, line flow, etc.\r\nWhen the measurementType is set to \"Specialization\", the type of Measurement is defined in more detail by the specialized class which inherits from Measurement.\r\n\r\n",
                     "type": [
                         "string",
                         "null"
@@ -356,7 +356,24 @@
     "$id": "http://modellen.netbeheernederland.nl/operation",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
+    "description": "This is a root class to provide common identification for all classes needing identification and naming attributes.",
     "metamodel_version": "1.7.0",
+    "properties": {
+        "mRID": {
+            "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.\r\nFor CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "name": {
+            "description": "The name is any free human readable and possibly non unique text naming the object.\r\n",
+            "type": [
+                "string",
+                "null"
+            ]
+        }
+    },
     "title": "operation",
     "type": "object",
     "version": "v0.draft"

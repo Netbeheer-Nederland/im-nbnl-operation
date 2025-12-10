@@ -2,7 +2,7 @@
 * Information model
 ** xref::index.adoc[Index]
 ** Classes
-*** xref::class/.adoc[ (root)]
+*** xref::class/IdentifiedObject.adoc[IdentifiedObject (root)]
 
 *** xref::class/ACDCTerminal.adoc[ACDCTerminal]
 
@@ -14,9 +14,6 @@
 
 *** xref::class/AnalogValue.adoc[AnalogValue]
 
-
-
-*** xref::class/IdentifiedObject.adoc[IdentifiedObject]
 
 
 
