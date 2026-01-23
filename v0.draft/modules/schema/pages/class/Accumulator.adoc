@@ -1,35 +1,8 @@
-= `Measurement`
+= `Accumulator`
 :toclevels: 4
 
 
-+++A Measurement represents any measured, calculated or non-measured
-non-calculated quantity. Any piece of equipment may contain Measurements,
-e.g. a substation may have temperature measurements and door open
-indications, a transformer may have oil temperature and tank pressure
-measurements, a bay may contain a number of power flow measurements and a
-Breaker may contain a switch status measurement.
-
-The PSR - Measurement association is intended to capture this use of
-Measurement and is included in the naming hierarchy based on
-EquipmentContainer. The naming hierarchy typically has Measurements as
-leaves, e.g. Substation-VoltageLevel-Bay-Switch-Measurement.
-
-Some Measurements represent quantities related to a particular sensor
-location in the network, e.g. a voltage transformer (VT) or potential
-transformer (PT) at a busbar or a current transformer (CT) at the bar
-between a breaker and an isolator.  The sensing position is not captured
-in the PSR - Measurement association.  Instead it is captured by the
-Measurement - Terminal association that is used to define the sensing
-location in the network topology. The location is defined by the
-connection of the Terminal to ConductingEquipment.
-
-If both a Terminal and PSR are associated, and the PSR is of type
-ConductingEquipment, the associated Terminal should belong to that
-ConductingEquipment instance.
-
-When the sensor location is needed both Measurement-PSR and
-Measurement-Terminal are used.  The Measurement-Terminal association is
-never used alone.+++
++++Accumulator represents an accumulated (counted) Measurement, e.g. an energy value.+++
 
 
 [cols="h,3",width=65%]
@@ -38,7 +11,7 @@ never used alone.+++
 | Class
 
 | URI
-| `cim:Measurement`
+| `cim:Accumulator`
 
 
 | CIM standard (perspective)
@@ -50,10 +23,8 @@ never used alone.+++
 
 == Class hierarchy
 * xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
-** *`Measurement`*
- *** xref::class/Accumulator.adoc[`Accumulator`]
- *** xref::class/Analog.adoc[`Analog`]
- *** xref::class/Discrete.adoc[`Discrete`]
+** xref::class/Measurement.adoc[`Measurement`]
+*** *`Accumulator`*
 
 
 == Slots
@@ -68,7 +39,16 @@ vars: {
     pad: 20
   }
 }
-Measurement {
+Accumulator {
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
+}
+
+
+
+AccumulatorValue {
   style {
     fill: "#eccfcb"
     shadow: true
@@ -96,10 +76,13 @@ PowerSystemResource {
 
 
 
-Measurement -> ACDCTerminal: Terminal
+Accumulator -> AccumulatorValue: AccumulatorValues
 
 
-Measurement -> PowerSystemResource: PowerSystemResource
+Accumulator -> ACDCTerminal: Terminal
+
+
+Accumulator -> PowerSystemResource: PowerSystemResource
 
 
 legend: "" {
@@ -155,40 +138,47 @@ legend: "" {
 |===
 | Name | Type | Description | Inherited from
 
+| <<AccumulatorValues,`AccumulatorValues`>>
+//| [[slots_table.AccumulatorValues]]<<AccumulatorValues,`AccumulatorValues`>>
+| 0..* +
+xref::class/AccumulatorValue.adoc[`AccumulatorValue`]
+| +++The values connected to this measurement.+++
+| _n/a_
+
 | <<PowerSystemResource,`PowerSystemResource`>>
 //| [[slots_table.PowerSystemResource]]<<PowerSystemResource,`PowerSystemResource`>>
 | 0..1 +
 xref::class/PowerSystemResource.adoc[`PowerSystemResource`]
 | +++The power system resource that contains the measurement.+++
-| _n/a_
+| xref::class/Measurement.adoc[`Measurement`]
 
 | <<Terminal,`Terminal`>>
 //| [[slots_table.Terminal]]<<Terminal,`Terminal`>>
 | 0..1 +
 xref::class/ACDCTerminal.adoc[`ACDCTerminal`]
 | +++One or more measurements may be associated with a terminal in the network.+++
-| _n/a_
+| xref::class/Measurement.adoc[`Measurement`]
 
 | <<measurementType,`measurementType`>>
 //| [[slots_table.measurementType]]<<measurementType,`measurementType`>>
 | 0..1 +
 https://w3id.org/linkml/String[`string`]
 | +++Specifies the type of measurement. For example, this specifies if the measurement represents an indoor temperature, outdoor...+++
-| _n/a_
+| xref::class/Measurement.adoc[`Measurement`]
 
 | <<unitMultiplier,`unitMultiplier`>>
 //| [[slots_table.unitMultiplier]]<<unitMultiplier,`unitMultiplier`>>
 | 0..1 +
 xref::enumeration/UnitMultiplier.adoc[`UnitMultiplier`]
 | +++The unit multiplier of the measured quantity.+++
-| _n/a_
+| xref::class/Measurement.adoc[`Measurement`]
 
 | <<unitSymbol,`unitSymbol`>>
 //| [[slots_table.unitSymbol]]<<unitSymbol,`unitSymbol`>>
 | 0..1 +
 xref::enumeration/UnitSymbol.adoc[`UnitSymbol`]
 | +++The unit of measure of the measured quantity.+++
-| _n/a_
+| xref::class/Measurement.adoc[`Measurement`]
 
 | <<mRID,`mRID`>>
 //| [[slots_table.mRID]]<<mRID,`mRID`>>
@@ -209,6 +199,32 @@ https://w3id.org/linkml/String[`string`]
 
 
 //[discrete]
+[#AccumulatorValues]
+=== `AccumulatorValues`
++++The values connected to this measurement.+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:Accumulator.AccumulatorValues`
+| Cardinality
+| 0..*
+| Type
+| xref::class/AccumulatorValue.adoc[`AccumulatorValue`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.AccumulatorValues,&#10548;>>
+--
+////
+
+
+//[discrete]
 [#measurementType]
 === `measurementType`
 +++Specifies the type of measurement. For example, this specifies if the measurement represents an indoor temperature, outdoor temperature, bus voltage, line flow, etc.
@@ -223,6 +239,9 @@ When the measurementType is set to "Specialization", the type of Measurement is 
 | 0..1
 | Type
 | https://w3id.org/linkml/String[`string`]
+
+| Inherited from
+| xref::class/Measurement.adoc[`Measurement`]
 
 
 |===
@@ -309,6 +328,9 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 | Type
 | xref::class/PowerSystemResource.adoc[`PowerSystemResource`]
 
+| Inherited from
+| xref::class/Measurement.adoc[`Measurement`]
+
 
 |===
 
@@ -334,6 +356,9 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 | 0..1
 | Type
 | xref::class/ACDCTerminal.adoc[`ACDCTerminal`]
+
+| Inherited from
+| xref::class/Measurement.adoc[`Measurement`]
 
 
 |===
@@ -361,6 +386,9 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 | Type
 | xref::enumeration/UnitMultiplier.adoc[`UnitMultiplier`]
 
+| Inherited from
+| xref::class/Measurement.adoc[`Measurement`]
+
 
 |===
 
@@ -387,6 +415,9 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 | Type
 | xref::enumeration/UnitSymbol.adoc[`UnitSymbol`]
 
+| Inherited from
+| xref::class/Measurement.adoc[`Measurement`]
+
 
 |===
 
@@ -404,4 +435,14 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 == Used by
 
 
-This class is not used by any other classes as the range of a slot.
+[cols="1,1",width=65%]
+|===
+| Source class | Slot name
+
+
+
+| xref::class/AccumulatorValue.adoc[`AccumulatorValue`] | xref::class/AccumulatorValue.adoc#Accumulator[`Accumulator`]
+
+
+|===
+

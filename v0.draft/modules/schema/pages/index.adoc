@@ -7,6 +7,12 @@
 | Name | Description
 
 
+| xref::class/Accumulator.adoc[`Accumulator`]
+| +++Accumulator represents an accumulated (counted) Measurement, e.g. an energy value.+++
+
+| xref::class/AccumulatorValue.adoc[`AccumulatorValue`]
+| +++AccumulatorValue represents an accumulated (counted) MeasurementValue.+++
+
 | xref::class/ACDCTerminal.adoc[`ACDCTerminal`]
 | +++An electrical connection point (AC or DC) to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes.+++
 
@@ -15,6 +21,12 @@
 
 | xref::class/AnalogValue.adoc[`AnalogValue`]
 | +++AnalogValue represents an analog MeasurementValue.+++
+
+| xref::class/Discrete.adoc[`Discrete`]
+| +++Discrete represents a discrete Measurement, i.e. a Measurement representing discrete values, e.g. a Breaker position.+++
+
+| xref::class/DiscreteValue.adoc[`DiscreteValue`]
+| +++DiscreteValue represents a discrete MeasurementValue.+++
 
 | xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
 | +++This is a root class to provide common identification for all classes needing identification and naming attributes.+++

@@ -2,7 +2,15 @@
 * Information model
 ** xref::index.adoc[Index]
 ** Classes
-*** xref::class/IdentifiedObject.adoc[IdentifiedObject (root)]
+*** xref::class/Measurement.adoc[Measurement (root)]
+
+*** xref::class/Accumulator.adoc[Accumulator]
+
+
+
+*** xref::class/AccumulatorValue.adoc[AccumulatorValue]
+
+
 
 *** xref::class/ACDCTerminal.adoc[ACDCTerminal]
 
@@ -16,12 +24,20 @@
 
 
 
+*** xref::class/Discrete.adoc[Discrete]
+
+
+
+*** xref::class/DiscreteValue.adoc[DiscreteValue]
+
+
+
+*** xref::class/IdentifiedObject.adoc[IdentifiedObject]
+
+
 
 *** xref::class/IOPoint.adoc[IOPoint]
 
-
-
-*** xref::class/Measurement.adoc[Measurement]
 
 
 

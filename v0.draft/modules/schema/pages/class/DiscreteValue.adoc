@@ -1,8 +1,8 @@
-= `MeasurementValue`
+= `DiscreteValue`
 :toclevels: 4
 
 
-+++The current state for a measurement. A state value is an instance of a measurement from a specific source. Measurements can be associated with many state values, each representing a different source for the measurement.+++
++++DiscreteValue represents a discrete MeasurementValue.+++
 
 
 [cols="h,3",width=65%]
@@ -11,7 +11,7 @@
 | Class
 
 | URI
-| `cim:MeasurementValue`
+| `cim:DiscreteValue`
 
 
 | CIM standard (perspective)
@@ -24,27 +24,117 @@
 == Class hierarchy
 * xref::class/IdentifiedObject.adoc[`IdentifiedObject`]
 ** xref::class/IOPoint.adoc[`IOPoint`]
-*** *`MeasurementValue`*
- **** xref::class/AccumulatorValue.adoc[`AccumulatorValue`]
- **** xref::class/AnalogValue.adoc[`AnalogValue`]
- **** xref::class/DiscreteValue.adoc[`DiscreteValue`]
+*** xref::class/MeasurementValue.adoc[`MeasurementValue`]
+**** *`DiscreteValue`*
 
 
 == Slots
 
 
 
+.Associated classes
+[d2,svg,theme=4]
+----
+vars: {
+  d2-config: {
+    pad: 20
+  }
+}
+DiscreteValue {
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
+}
+
+
+
+Discrete {
+  style {
+    fill: "#eccfcb"
+    shadow: true
+  }
+}
+
+
+
+
+DiscreteValue -> Discrete: Discrete
+
+
+legend: "" {
+  style: {
+    fill: transparent
+    stroke: transparent
+  }
+  grid-rows: 3
+  grid-columns: 2
+  grid-gap: 10
+  near: bottom-right
+  iec61968_color: "" {
+    style: {
+      fill: "#d1e7c2"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61968_text: "IEC61968 (Enterprise)" {
+    shape: text
+  }
+  iec61970_color: "" {
+    style: {
+      fill: "#eccfcb"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec61970_text: "IEC61970 (Grid)" {
+    shape: text
+  }
+  iec62325_color: "" {
+    style: {
+      fill: "#fffbef"
+      stroke: black
+      stroke-width: 1
+    }
+    width: 10
+    height: 10
+  }
+  iec62325_text: "IEC62325 (Market)" {
+    shape: text
+  }
+}
+----
+
 
 [cols="1,1,2,1",width=100%]
 |===
 | Name | Type | Description | Inherited from
+
+| <<Discrete,`Discrete`>>
+//| [[slots_table.Discrete]]<<Discrete,`Discrete`>>
+| 1 +
+xref::class/Discrete.adoc[`Discrete`]
+| +++Measurement to which this value is connected.+++
+| _n/a_
+
+| <<value,`value`>>
+//| [[slots_table.value]]<<value,`value`>>
+| 0..1 +
+https://w3id.org/linkml/Integer[`integer`]
+| +++The value to supervise.+++
+| _n/a_
 
 | <<timeStamp,`timeStamp`>>
 //| [[slots_table.timeStamp]]<<timeStamp,`timeStamp`>>
 | 0..1 +
 https://w3id.org/linkml/Datetime[`datetime`]
 | +++The time when the value was last updated.+++
-| _n/a_
+| xref::class/MeasurementValue.adoc[`MeasurementValue`]
 
 | <<mRID,`mRID`>>
 //| [[slots_table.mRID]]<<mRID,`mRID`>>
@@ -62,6 +152,32 @@ https://w3id.org/linkml/String[`string`]
 |===
 
 '''
+
+
+//[discrete]
+[#Discrete]
+=== `Discrete`
++++Measurement to which this value is connected.+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:DiscreteValue.Discrete`
+| Cardinality
+| 1
+| Type
+| xref::class/Discrete.adoc[`Discrete`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.Discrete,&#10548;>>
+--
+////
 
 
 //[discrete]
@@ -138,6 +254,9 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 | Type
 | https://w3id.org/linkml/Datetime[`datetime`]
 
+| Inherited from
+| xref::class/MeasurementValue.adoc[`MeasurementValue`]
+
 
 |===
 
@@ -149,10 +268,46 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
 ////
 
 
+//[discrete]
+[#value]
+=== `value`
++++The value to supervise.+++
+
+
+[cols="h,4",width=65%]
+|===
+| URI
+| `cim:DiscreteValue.value`
+| Cardinality
+| 0..1
+| Type
+| https://w3id.org/linkml/Integer[`integer`]
+
+
+|===
+
+////
+[.text-left]
+--
+<<slots_table.value,&#10548;>>
+--
+////
+
+
 
 
 
 == Used by
 
 
-This class is not used by any other classes as the range of a slot.
+[cols="1,1",width=65%]
+|===
+| Source class | Slot name
+
+
+
+| xref::class/Discrete.adoc[`Discrete`] | xref::class/Discrete.adoc#DiscreteValues[`DiscreteValues`]
+
+
+|===
+

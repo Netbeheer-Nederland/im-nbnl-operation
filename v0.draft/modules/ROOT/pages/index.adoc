@@ -85,12 +85,24 @@ direction: down
 
 Analog.class: grid
 AnalogValue.class: grid
+Discrete.class: grid
+DiscreteValue.class: grid
+Accumulator.class: grid
+AccumulatorValue.class: grid
 PowerSystemResource.class: grid
 Terminal.class: grid
 
 Analog -- AnalogValue
+Discrete -- DiscreteValue
+Accumulator -- AccumulatorValue
+
 Analog -- PowerSystemResource
+Discrete -- PowerSystemResource
+Accumulator -- PowerSystemResource
+
 Analog -- Terminal
+Discrete -- Terminal
+Accumulator -- Terminal
 ----
 
 From a measurement perspective, the *Operation Profile* specifies the
