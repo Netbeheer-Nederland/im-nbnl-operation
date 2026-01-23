@@ -188,6 +188,7 @@ classes:
         required: false
         multivalued: false
     class_uri: cim:Measurement
+    tree_root: true
   ACDCTerminal:
     description: An electrical connection point (AC or DC) to a piece of conducting
       equipment. Terminals are connected at physical connection points called connectivity
@@ -219,7 +220,6 @@ classes:
         required: false
         multivalued: false
     class_uri: cim:IdentifiedObject
-    tree_root: true
   Terminal:
     description: An AC electrical connection point to a piece of conducting equipment.
       Terminals are connected at physical connection points called connectivity nodes.
@@ -285,3 +285,65 @@ classes:
     from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Meas
     is_a: IdentifiedObject
     class_uri: cim:IOPoint
+  Discrete:
+    description: Discrete represents a discrete Measurement, i.e. a Measurement representing
+      discrete values, e.g. a Breaker position.
+    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Meas
+    is_a: Measurement
+    attributes:
+      DiscreteValues:
+        description: The values connected to this measurement.
+        slot_uri: cim:Discrete.DiscreteValues
+        range: DiscreteValue
+        required: false
+        multivalued: true
+    class_uri: cim:Discrete
+  DiscreteValue:
+    description: DiscreteValue represents a discrete MeasurementValue.
+    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Meas
+    is_a: MeasurementValue
+    attributes:
+      value:
+        description: The value to supervise.
+        slot_uri: cim:DiscreteValue.value
+        range: integer
+        required: false
+        multivalued: false
+      Discrete:
+        description: Measurement to which this value is connected.
+        slot_uri: cim:DiscreteValue.Discrete
+        range: Discrete
+        required: true
+        multivalued: false
+    class_uri: cim:DiscreteValue
+  Accumulator:
+    description: Accumulator represents an accumulated (counted) Measurement, e.g.
+      an energy value.
+    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Meas
+    is_a: Measurement
+    attributes:
+      AccumulatorValues:
+        description: The values connected to this measurement.
+        slot_uri: cim:Accumulator.AccumulatorValues
+        range: AccumulatorValue
+        required: false
+        multivalued: true
+    class_uri: cim:Accumulator
+  AccumulatorValue:
+    description: "AccumulatorValue represents an accumulated (counted) MeasurementValue."
+    from_schema: https://cim.ucaiug.io/ns#TC57CIM.IEC61970.Base.Meas
+    is_a: MeasurementValue
+    attributes:
+      value:
+        description: The value to supervise. The value is positive.
+        slot_uri: cim:AccumulatorValue.value
+        range: integer
+        required: false
+        multivalued: false
+      Accumulator:
+        description: Measurement to which this value is connected.
+        slot_uri: cim:AccumulatorValue.Accumulator
+        range: Accumulator
+        required: true
+        multivalued: false
+    class_uri: cim:AccumulatorValue
